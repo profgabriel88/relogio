@@ -99,8 +99,21 @@ void loop()
 
   display.setTextSize(2); // muda o tamanho do texto - change text size
   display.setTextColor(BLACK);
-  display.setCursor(11,13);
-  display.println(RTC.getHours()); // mostra as horas - show the hours
+  
+  // aqui se as horas forem menor que 10 precisamos colocar o 0 antes
+  // if hours is less than 10 we need to display the 0 first
+  if (RTC.getHours() < 10)
+  {
+    display.setCursor(11,13);
+    display.println("0");
+    display.setCursor(22,13);
+    display.println(RTC.getHours());
+  }
+  else
+  {
+    display.setCursor(11,13);
+    display.println(RTC.getHours());
+  }
 
   display.setCursor(32,13);
   display.println(":"); // mostra o símbolo : - displays the symbol :
