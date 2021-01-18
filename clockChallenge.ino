@@ -22,7 +22,7 @@ Adafruit_PCD8544 display = Adafruit_PCD8544(7, 6, 5, 4, 3);
 #define BIGODE_HEIGHT 16
 #define BIGODE_WIDTH  16
 
-// logo
+// logo, 1 representa um pixel e 0 um espaço em branco - logo, 1 is a pixel and 0 a blank space
 static const unsigned char PROGMEM bigode[] =
 { B00000000, B00000000,
   B11111111, B11111111,
